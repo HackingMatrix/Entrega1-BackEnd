@@ -57,9 +57,9 @@ class ProductManager {
         const server = express()
 
     server.get('/products', (req, res) =>{
-        if (req.query.cantidad !== 0){
+        if ((req.query.cantidad !== 0) && (productos.length !== 0)){
             for (let i = 0; i < req.query.cantidad; i++){
-            const element = array[i];
+            const element = productos[i];
             res.send(element)
             }
         }
